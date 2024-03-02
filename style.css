@@ -55,14 +55,9 @@ header {
   display: flex;
   flex-direction: column;
   overflow: hidden; /* Ensure content doesn't overflow */
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+
 }
-.card-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 .card img {
   width: 100%;
   height: 100%;
@@ -234,7 +229,15 @@ button:hover {
     ); /* Mengubah jumlah kolom grid menjadi satu pada layar <= 440px */
     gap: 1rem; /* Mengurangi jarak antar elemen */
   }
-
+  .card{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .card-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .card img {
     border-radius: 0.5rem;
     transition: transform 0.3s ease; /* Transition for smooth zoom effect */
