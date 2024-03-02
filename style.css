@@ -1,0 +1,304 @@
+/* Header Styles */
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #1e8cf3;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+}
+
+.header {
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #dfeeff;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 1.1rem;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Styles */
+.main {
+  margin-top: 50px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: #edf2f7;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensure content doesn't overflow */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.card-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease; /* Transition for smooth zoom effect */
+}
+
+.card img:hover {
+  transform: scale(
+    1.1
+  ); /* Scale the image to 1.1 times its original size on hover */
+}
+.card-content {
+  margin-top: 1rem;
+}
+
+.card-content p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: #3a3a3a;
+}
+.card-content h2 {
+  font-size: 20px;
+  line-height: 24px;
+}
+.card-content p:last-child {
+  font-weight: bold;
+}
+.card button {
+  border-radius: 5px;
+  background: #1e8cf3;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 9px 35px;
+}
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.bawah {
+  width: 100%;
+  max-width: 1200px; /* Optional: jika Anda ingin batasi lebar maksimum */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left p {
+  margin: 0;
+}
+.footer-left p a {
+  text-decoration: none;
+  color: rgb(59, 193, 255);
+}
+.footer-left p a:hover {
+  color: white;
+}
+.footer-right nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.footer-right nav ul li {
+  margin-right: 20px;
+}
+
+.footer-right nav ul li:last-child {
+  margin-right: 0;
+}
+
+.footer-right nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-right nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* contact person */
+.contact-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.288);
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsivitas */
+
+@media (max-width: 600px) {
+  footer {
+    position: relative;
+  }
+  .bawah {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+  .footer-right {
+    margin-top: 10px;
+  }
+  .footer-right nav ul {
+    justify-content: center;
+  }
+
+  .footer-right nav ul li {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 440px) {
+  .main {
+    grid-template-columns: repeat(
+      1,
+      minmax(250px, 1fr)
+    ); /* Mengubah jumlah kolom grid menjadi satu pada layar <= 440px */
+    gap: 1rem; /* Mengurangi jarak antar elemen */
+  }
+
+  .card img {
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease; /* Transition for smooth zoom effect */
+    aspect-ratio: 1/1; /* Ensure the aspect ratio of the image is 1:1 (square) */
+  }
+
+  .card-content h3 {
+    font-size: 18px; /* Mengurangi ukuran font judul */
+    line-height: 20px; /* Mengurangi tinggi baris untuk judul */
+  }
+
+  .card-content h2 {
+    font-size: 18px; /* Mengurangi ukuran font harga */
+    line-height: 20px; /* Mengurangi tinggi baris untuk harga */
+  }
+
+  .card-content p {
+    font-size: 15px; /* Mengurangi ukuran font deskripsi */
+    line-height: 18px; /* Mengurangi tinggi baris untuk deskripsi */
+    margin-bottom: 0.25rem; /* Mengurangi margin bawah untuk deskripsi */
+  }
+
+  .card button {
+    font-size: 15px;
+    padding: 8px 25px; /* Mengurangi padding tombol */
+  }
+  .contact-form {
+    max-width: 90%;
+    margin: 0 20px;
+  }
+  .contact-form h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+  input,
+  textarea,
+  button {
+    max-width: 100%;
+  }
+  .contact-form button {
+    border-radius: 9px;
+  }
+  .contact-form label {
+    font-size: 18px;
+  }
+  .contact-form input,
+  textarea {
+    font-size: 18px;
+  }
+  .bawah {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+  }
+
+  .footer-right nav ul {
+    justify-content: center;
+  }
+
+  .footer-right nav ul li {
+    margin: 0 10px;
+  }
+}
