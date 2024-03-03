@@ -197,6 +197,19 @@ button:hover {
 /* Responsivitas */
 
 @media (max-width: 600px) {
+  .card{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .card-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .card img {
+  
+    aspect-ratio: 1/1; /* Ensure the aspect ratio of the image is 1:1 (square) */
+  }
   footer {
     position: relative;
   }
@@ -229,15 +242,7 @@ button:hover {
     ); /* Mengubah jumlah kolom grid menjadi satu pada layar <= 440px */
     gap: 1rem; /* Mengurangi jarak antar elemen */
   }
-  .card{
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .card-animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
   .card img {
     border-radius: 0.5rem;
     transition: transform 0.3s ease; /* Transition for smooth zoom effect */
