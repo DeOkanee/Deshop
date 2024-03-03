@@ -14,10 +14,19 @@
         <h1>Deshop</h1>
         <nav class="nav-links">
           <a href="#">Home</a>
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Kategori</a>
+            <div id="kategoriDropdown" class="dropdown-content">
+              <a href="#">Pakaian</a>
+              <a href="#">Celana</a>
+            </div>
+          </div>
           <a href="#" onclick="scrollToFooter()">Contact</a>
         </nav>
       </div>
     </header>
+    
+    
 
     <main class="main">
       <div class="card">
@@ -196,8 +205,27 @@
         </div>
       </div>
     </footer>
-
     <script>
+      function toggleDropdown() {
+        document.getElementById("kategoriDropdown").classList.toggle("show");
+      }
+    
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-toggle')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
+    
+    <script>
+
       //ini menuju dri header ke footer
       function scrollToFooter() {
         var footer = document.querySelector("footer");
