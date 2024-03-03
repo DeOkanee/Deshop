@@ -226,7 +226,7 @@ button:hover {
 
 @media (max-width: 600px) {
   .card{
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
